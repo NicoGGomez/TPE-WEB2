@@ -6,11 +6,31 @@
 
 - Brandon Leiva: ...@gmail.com
 
-Temática
-Tienda de indumentaria
+# Tienda de Indumentaria
 
+Nuestra página web, es una tienda de indumentaria de prendas de futbol que ofrece variedad en distintos talles y precios.
 
-# Descripción
+por el momento, contamos con dos 2 tablas: 
 
-Nuestra página web es una tienda de indumentaria unisex que ofrece una variedad de remeras en distintos colores, talles y precios.
+- categoria
+- producto
 
+### **categoria**
+
+esta tabla cuenta con los atributos:
+
+- id_categoria (pk)
+- tipo_prenda
+- detalle
+
+### **producto**
+
+esta tabla cuenta con los atributos:
+
+- id_producto (pk)
+- id_categoria (fk)
+- tipo
+- talle
+- precio
+
+estas tablas se relaciona entres si por el id_categoria.
