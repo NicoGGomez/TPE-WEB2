@@ -4,7 +4,7 @@
 
 - Nicolas Gomez: anelecarg@icloud.com
 
-- Brandon Leiva: ...@gmail.com
+- Brandon Leiva: brandonjeremias1@hotmail.com
 
 # Tienda de Indumentaria
 
