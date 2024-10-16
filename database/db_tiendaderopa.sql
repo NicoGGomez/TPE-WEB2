@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 17-09-2024 a las 20:58:07
+-- Tiempo de generación: 15-10-2024 a las 22:13:56
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -80,6 +80,24 @@ INSERT INTO `producto` (`id_producto`, `id_categoria`, `tipo`, `talle`, `precio`
 (10, 12, 'deportiva', 'XL', 49999),
 (11, 13, 'deportiva', '', 9999),
 (12, 14, 'deportiva', '', 9999);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `usuario`
+--
+
+CREATE TABLE `usuario` (
+  `usuario` varchar(200) NOT NULL,
+  `contraseña` varchar(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `usuario`
+--
+
+INSERT INTO `usuario` (`usuario`, `contraseña`) VALUES
+('webadmin', 'admin');
 
 --
 -- Índices para tablas volcadas
