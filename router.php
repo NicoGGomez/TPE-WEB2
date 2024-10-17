@@ -14,3 +14,4 @@ $params = explode('/', $action);
 
 switch ($params[0]) {
 }
+?>
