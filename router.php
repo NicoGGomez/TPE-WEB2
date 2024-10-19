@@ -19,45 +19,105 @@ $params = explode('/', $action);
 
 // login                    ->  authController->showLogin();
 // logout                   ->  authController->showLogout(); 
+// validate                 ->  authController->auth();
 // home                     ->  homeController->showHome();
-// categories               ->  categoriesController->showCategoria();
-// products                 ->  productsController->showProductos(); 
-// add                      ->  productsController->addProductos();  
-// validate                 ->  authController->auth(); 
-// delete                   ->  productsController->deleteProducto(); 
-// formActualizarProduct    ->  productsController->FormEditProducto();  
-// updateProduct            ->  productsController->updateProducto(); 
-// detalle                  ->  productsController->showProductoDetails(); 
-// detalleCategorie         ->  categoriesController->showCategoriaDetails(); 
-// filter                   ->  categoriesController->filter(); 
-// addCategorie             ->  categoriesController->addCategoria();
-// deleteCategorie          ->  categoriesController->deleteCategoria();
-// editCategorie            ->  categoriesController->editCategoria();
+// categories               ->  categoriaController->showCategoria();
+// products                 ->  productoController->showProductos(); 
+// add                      ->  productoController->addProductos();   
+// delete                   ->  productoController->deleteProducto($id_prod); 
+// formActualizarProduct    ->  productoController->FormEditProducto();  
+// updateProduct            ->  productoController->updateProducto(); 
+// detalle                  ->  productoController->showProductoDetails(); 
+// detalleCategorie         ->  categoriaController->showCategoriaDetails(); 
+// filter                   ->  categoriaController->filter(); 
+// addCategorie             ->  categoriaController->addCategoria();
+// deleteCategorie          ->  categoriaController->deleteCategoria();
+// editCategorie            ->  categoriaController->editCategoria();
 
 switch ($params[0]) {
     case 'login':
-        $controller = new authController();
-        $controller -> showLogin();
+        $authController = new authController();
+        $authController -> showLogin();
         break;
 
     case 'logout':
-        $controller = new authController();
-        $controller -> showLogout();
+        $authController = new authController();
+        $authController -> showLogout();
+        break;
+
+    case 'validate':
+        $authController  = new authController();
+        $authController -> auth();
         break;
 
     case 'home':
-        $controller = new homeController();
-        $controller-> showHome();
+        $homeController = new homeController();
+        $homeController -> showHome();
         break;
         
     case 'categoria':
-        $controller = new categoriaController();
-        $controller-> showCategoria();
+        $categoriaController = new categoriaController();
+        $categoriaController -> showCategoria();
         break;
 
     case 'producto':
-        $controller = new productoController();
-        $controller-> showProducto();
+        $productoController = new productoController();
+        $productoController -> showProducto();
+        break;
+
+    case 'add':
+        $productoController = new productoController();
+        $productoController -> addProducto();
+        break;
+
+    case 'delete':
+        $productoController = new productoController();
+        $id_prod = $params[1];
+        $productoController -> deleteProducto($id_prod);
+        break;
+
+    case 'formActualizarProdcut':
+        $$productoController = new productoController();
+        $id_prod = $params[1];
+        $productoController -> FormEditProducto($id_prod);
+        break;
+
+    case 'updateProduct':
+        $productsController = new productoController();
+        $ID_producto = $params[1];
+        $productsController -> updateProduct($ID_producto);
+        break;
+
+    case 'detalle':
+        $productsController = new productoController();
+        $ID_producto = $params[1];
+        $productsController -> showProductDetails($ID_producto);
+        break;
+
+    case 'detalleCategorie':
+        $categoriesController = new categoriaController();
+        $ID_categoria = $params[1];
+        $categoriesController -> showCategoriaDetails($ID_categoria);
+        break;
+
+    case 'filter':
+        $categoriesController = new categoriaController();
+        $categoriesController -> filter();
+        break;
+
+    case 'addCategorie':
+        $categoriesController = new categoriaController();
+        $categoriesController -> addCategoria();
+        break;
+
+    case 'deleteCategorie':
+        $categoriesController = new categoriaController();
+        $ID_categoria = $params[1];
+        $categoriesController -> deleteCategoria($ID_categoria);
+        break;
+
+    default:
+        echo '404 page not found';
         break;
 }
 
