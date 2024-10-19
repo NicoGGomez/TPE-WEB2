@@ -3,7 +3,7 @@
 class authView {
 
     function showLogin(){
-        echo 'hola estas en usuario';
+        require 'templates/login.phtml';
     }
 
     function showLogout(){

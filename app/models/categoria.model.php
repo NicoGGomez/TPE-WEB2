@@ -4,10 +4,11 @@ class categoriesModel {
     private $db;
 
     public function __construct(){
-        $this->db = new PDO('mysql:host=localhost;'.'dbname=tienda;charset=utf8','root','');
+        $this->db = new PDO('mysql:host=localhost;'.'dbname=db_tiendaropa;charset=utf8','root','');
     }
+
 /* OBTIENE TODOS LOS REGISTROS DE LA TABLA CATEGORIAS */
-    function getCategories(){
+    function getCategorias(){
         $query = $this->db->prepare('SELECT * FROM categoria');
         $query->execute();
 
@@ -15,8 +16,8 @@ class categoriesModel {
         return $categories;
     }
 
-    public function getCategorieDetails($ID_categoria){
-        $query = $this->db->prepare("SELECT * FROM categoria WHERE ID_categoria = ?");
+    public function getCategoriaDetails($ID_categoria){
+        $query = $this->db->prepare("SELECT * FROM categoria WHERE id_categoria = ?");
         $query->execute([$ID_categoria]);
         $categorieById = $query->fetchAll(PDO::FETCH_OBJ);    
         
@@ -24,7 +25,7 @@ class categoriesModel {
     }
 
 /* OBTIENE PRODUCTOS Y CATEGORIAS */
-    function getProductAndCategorie($selected){
+    function getProductoAndCategoria($selected){
         $query = $this->db->prepare("SELECT * FROM producto a INNER JOIN  categoria b ON a.ID_categoria_fk = b.ID_categoria WHERE a.ID_categoria_fk=?");
         $query->execute(array($selected));
         $ProductAndCategorie = $query->fetchAll(PDO::FETCH_OBJ);
@@ -32,7 +33,7 @@ class categoriesModel {
         return $ProductAndCategorie;
     }
     /* INSERTA UNA CATEGORIA */
-    public function insertCategorie($ID_categoria, $TIPO_DE_PRENDA, $DETALLE) {
+    public function insertCategoria($ID_categoria, $TIPO_DE_PRENDA, $DETALLE) {
         $query = $this->db->prepare('INSERT INTO categoria (ID_categoria, TIPO_DE_PRENDA, DETALLE) VALUES (?, ?, ?)');
         $query->execute([$ID_categoria, $TIPO_DE_PRENDA, $DETALLE]);
     
@@ -40,8 +41,8 @@ class categoriesModel {
     }
     
     /* FUNCION PARA BORRAR POR ID LA CATEGORIA*/ 
-     public function deleteCategorieById($ID_categoria) {
-        $query = $this->db->prepare("DELETE FROM categoria WHERE ID_categoria = ?");
+     public function deleteCategoriaById($ID_categoria) {
+        $query = $this->db->prepare("DELETE FROM categoria WHERE id_categoria = ?");
         $query->execute([$ID_categoria]);
     }
     

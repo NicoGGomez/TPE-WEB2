@@ -1,20 +1,21 @@
 <?php 
 
 class categoriaView {
+    private $tpl;
 
     function show(){
-        echo 'hola estas en categoria';
+        require 'templates/categoria.phtml';
     }
 
-    // function showCategories($categories){
-    //     $this->smarty->assign('categories', $categories);
-    //     $this->smarty->display('categories.tpl');
-    // }
+    function showCategorias($categories){
+        
+    }
 
-    // function showDetailsCategorie($categorieById){
-    //     $this->smarty->assign('categorieById', $categorieById);
-    //     $this->smarty->display('details.categorie.tpl');
-    // }
+    function showDetailsCategorias($categorieById){
+        require 'detalle.categoria.phtml';
+        // $this->smarty->assign('categorieById', $categorieById);
+        // $this->smarty->display('details.categorie.tpl');
+    }
 
     // function showResultFilter($ProductAndCategorie){
     //     $this->smarty->assign('ProductAndCategorie', $ProductAndCategorie);

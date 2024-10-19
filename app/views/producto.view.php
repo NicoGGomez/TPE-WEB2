@@ -3,7 +3,7 @@
 class productoView {
 
     function show(){
-        echo 'estas en prodcutos';
+        require 'templates/producto.phtml';
     }
 
 }
