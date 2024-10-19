@@ -11,8 +11,18 @@ class authController {
         $this->view = new authView();
     }
 
-    public function showAuth(){
-        $this->view->show();
+    public function showLogin(){
+        $this->view->showLogin();
     }
+
+    public function showLogout(){
+        $this->view->showLogout();
+    }
+
+    // funcion de ejemplo
+
+    // public function showAuth(){
+    //     $this->view->show();
+    // }
 
 }

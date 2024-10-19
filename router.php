@@ -17,10 +17,32 @@ if (!empty($_GET['action'])) {
 // Parsea la acción ej: dev/juan --> ['dev', juan]
 $params = explode('/', $action);
 
+// login                    ->  authController->showLogin();
+// logout                   ->  authController->showLogout(); 
+// home                     ->  homeController->showHome();
+// categories               ->  categoriesController->showCategoria();
+// products                 ->  productsController->showProductos(); 
+// add                      ->  productsController->addProductos();  
+// validate                 ->  authController->auth(); 
+// delete                   ->  productsController->deleteProducto(); 
+// formActualizarProduct    ->  productsController->FormEditProducto();  
+// updateProduct            ->  productsController->updateProducto(); 
+// detalle                  ->  productsController->showProductoDetails(); 
+// detalleCategorie         ->  categoriesController->showCategoriaDetails(); 
+// filter                   ->  categoriesController->filter(); 
+// addCategorie             ->  categoriesController->addCategoria();
+// deleteCategorie          ->  categoriesController->deleteCategoria();
+// editCategorie            ->  categoriesController->editCategoria();
+
 switch ($params[0]) {
     case 'login':
         $controller = new authController();
-        $controller -> showAuth();
+        $controller -> showLogin();
+        break;
+
+    case 'logout':
+        $controller = new authController();
+        $controller -> showLogout();
         break;
 
     case 'home':

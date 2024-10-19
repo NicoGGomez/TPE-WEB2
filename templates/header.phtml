@@ -7,11 +7,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Heebo&family=Nunito:wght@300&family=Poppins:wght@300&family=Roboto:wght@300&family=Tilt+Neon&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="../styles/style.css">
     <title>Secta Copera</title>
 </head>
 <body>
     <header>
+
+    <div class="fondo">
+        
         <nav class="navbar">
             <div class="logo">Secta Copera</div>
             <ul class="nav-list">
@@ -21,10 +24,5 @@
                     <a href="categories">Categories</a>
                 </li>
             </ul>
-            {if !isset($smarty.session.USER_ID)}
-            <button class="btn"><a href="login">Login</a></button>
-            {else}
-            <button class="btn"><a href="logout">Logout({$smarty.session.USER_EMAIL})</a></button>
-            {/if}
         </nav>
     </header>
