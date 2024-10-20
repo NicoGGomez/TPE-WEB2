@@ -1,4 +1,5 @@
 <?php require('header.phtml') ?>
+<div class="container-categoria-detalles">
 <table class="table">
     <thead>
       <tr>
@@ -10,10 +11,11 @@
     <tbody>
     <?php foreach($categorias as $categoria ): ?>
       <tr>
-      <td><?= $categoria->id_categoria?></td>
-      <td><?= $categoria->tipo_prenda?></td>
-      <td><?= $categoria->detalle?></td>
+      <td><p><?= $categoria->id_categoria?></p></td>
+      <td><p><?= $categoria->tipo_prenda?></p></td>
+      <td><p><?= $categoria->detalle?></p></td>
       </tr>
       <?php endforeach; ?>
     </tbody>
   </table>
+</div>

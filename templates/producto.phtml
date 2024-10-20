@@ -1,5 +1,6 @@
 <?php include('templates/header.phtml'); ?>
-<table class="tableProduct"> 
+<div class="container-producto">
+<table class="table"> 
     <thead>
       <tr>
       <th class='col'>#</th>
@@ -7,19 +8,19 @@
       <th scope='col'>Producto</th>
       <th scope='col'>Talle</th>
       <th scope='col'>Precio</th>
-      <th scope='col'></th>
-      <th scope='col'></th>
-      <th scope='col'></th>
+      <th scope='col'>Detalles</th>
+      <th scope='col'>Borrar</th>
+      <th scope='col'>Editar</th>
       </tr>
     </thead>
     <tbody>
     <?php foreach ($prods as $prod ) : ?>
       <tr>
-        <td><?= $prod -> id_categoria ?></td>
-        <td><?= $prod -> id_producto ?></td>
-        <td><?= $prod -> tipo ?></td>
-        <td><?= $prod -> talle ?></td>
-        <td><span>$</span><?= $prod -> precio ?> </td>
+        <td><p><?= $prod -> id_categoria ?></p></td>
+        <td><p><?= $prod -> id_producto ?></p></td>
+        <td><p><?= $prod -> tipo ?></p></td>
+        <td><p><?= $prod -> talle ?></p></td>
+        <td><span>$</span><p><?= $prod -> precio ?></p></td>
         <td><a href='detalle/<?= $prod->id_producto ?>' type='button'>Detalles</a></td>
         <td><a href='delete/<?= $prod->id_producto ?>' type='button'>Borrar</a></td> 
         <td><a href='formActualizarProdcuto/<?= $prod->id_producto ?>' type='button'>Editar</a></td> 
@@ -27,5 +28,6 @@
     <?php endforeach; ?>
     </tbody>
 </table>
+</div>
 
 <?php require('formAddProducto.phtml') ?>

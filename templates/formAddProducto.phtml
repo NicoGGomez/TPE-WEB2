@@ -1,32 +1,29 @@
-<!-- Se crea un formulario para insertar nuevos productos a la tabla  -->
-    <form class="formulario" action="add" method="POST">
+<div class="container-add-producto">
+    
+<form class="formulario" action="add" method="POST">
     <div>
         <label class="form-label">NUMERO CATEGORIA</label>
         <select name="id_categoria" class="form-control"> 
-    <!--acomodar esto para que no sea hardcodeado-->
-            <option value="5">1 - independiente</option>
-            <option value="6">2 - boca</option>
+            <?php foreach ($productos as $producto) { ?>
+            <option value='<?= $producto->id_categoria?>'><?= $producto->id_categoria?> - <?= $producto->tipo?>
+        </option>
+            <?php } ?>
         </select>
-
-<!-- HABRIA QUE HACERLO ASI PERO NO ANDA!!!
-<select class="form-control" id="cliente" name="cliente" required>
-    <?php foreach ($clientes as $cliente) { ?>
-        <?= $cliente->id_cliente; ?>"><?= $cliente->nombre; ?>
-    <?php } ?>
-</select> -->
-
     </div>
+    
     <div>
         <label class="form-label">TIPO</label>
         <input type="text" name="tipo" placeholder="Ingrese un tipo de prenda" class="form-control" required>
     </div>
     <div>
         <label class="form-label">TALLE</label>
-        <input type="text" name="talle" class="form-control" required>
+        <input type="text" name="talle" placeholder="Ingrese un talle" class="form-control" required>
     </div>
     <div>
         <label class="form-label">PRECIO</label>
-        <input type="text" name="precio" class="form-control" required>
+        <input type="text" name="precio" placeholder="Ingrese un precio" class="form-control" required>
     </div>
         <button type="submit" class="btn-form-login">Agregar Producto</button>
     </form>
+
+</div>

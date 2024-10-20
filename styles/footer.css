@@ -1,12 +1,10 @@
 /* footer */
 
 .footer {
-    bottom: 0;
     width: 100%;
     align-self: flex-end;
     display: flex;
     background-color: black;
-    position: relative;
 }
 
 .footer .container {
