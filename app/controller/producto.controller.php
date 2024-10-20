@@ -40,8 +40,36 @@ class productoController {
     }
 
     function FormEditProducto($id){
-        $productoById = $this->model->getProductoById($id);
-        $this->view->showFormEdit($productoById);
+        $productosById = $this->model->getProductoById($id);
+        $this->view->showFormEdit($productosById);
+    }
+
+    function updateProducto($ID_producto){
+        authHelper::verify();
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $TIPO = $_POST['tipo'];
+            $TALLE = $_POST['talle'];
+            $PRECIO = $_POST['precio'];
+            try {
+                if (empty($TIPO) || empty($TALLE) || empty($PRECIO)) {
+                $this->view->showError("Debe completar todos los campos");
+                return;
+                }
+                $this->model->updateProduct($ID_producto, $TIPO, $TALLE, $PRECIO);
+                if ($ID_producto) {
+                    header('Location: ' . BASE_URL . 'producto');
+                }
+            } catch (PDOException $e) {
+                $this->view->showError("No se puede actualizar: " . $e->getMessage());
+            }
+            } else {
+            $this->view->showError("Error al actualizar");
+            }
+    }
+
+    public function showProductoDetails($ID_producto){
+        $productDetails = $this->model->getproductoDetails($ID_producto);
+        $this->view->showDetails($productDetails);
     }
 
 }

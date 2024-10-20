@@ -16,26 +16,47 @@ class productoModel {
         return $productos;
     }
 
-/* OBTIENE CATEGORIAS POR PRODUCTO */
-function getCategorieAndProduct($selected){ // ARREGLAR ESTO <3 !!!!!
-    $query = $this->db->prepare("SELECT producto. *, categoria.tipo FROM producto a INNER JOIN categoria ON producto.id_categoria = categoria.id_categoria WHERE producto.id_producto = ?;");
-    $query->execute(array($selected)); // no anda !!!!!!!!!
-    $CategorieAndProduct = $query->fetchAll(PDO::FETCH_OBJ);
-
-    return $CategorieAndProduct;
-}
-
     /* OBTIENE PRODUCTOS POR ID */
-    function getProductoById($ID_producto){
+    function getProductoById($id_producto){
         $query = $this->db->prepare('SELECT * FROM producto WHERE id_producto=?');
-        $query->execute([$ID_producto]);
+        $query->execute([$id_producto]);
         $productById = $query->fetch(PDO::FETCH_OBJ);
 
         return $productById;
     }
 
+    /* FUNCION PARA BORRAR POR ID */ 
+    function deleteProductoById($id_producto) {
+        $query = $this->db->prepare("DELETE FROM producto WHERE id_producto = ?");
+        $query->execute([$id_producto]);
+    } 
 
-/* INSERTA UN PRODUCTO */
+    // FUNCION PARA ACTUALIZAR LOS PRODUCTOS DE LA TABLA
+    public function updateProduct($id_producto, $TIPO, $TALLE, $PRECIO) {
+        $query = $this->db->prepare('UPDATE producto SET tipo=?, talle=?, precio=? WHERE id_producto=?');
+        $query->execute([$TIPO, $TALLE, $PRECIO, $id_producto]);
+    }         
+
+    // FUNCION QUE DEVUELVE LOS DETALLES DE LOS PRODUCTOS 
+    public function getproductoDetails($ID_producto){
+        $query = $this->db->prepare("SELECT * FROM producto WHERE id_producto = ?");
+        $query->execute([$ID_producto]);
+        $productById = $query->fetchAll(PDO::FETCH_OBJ);    
+        
+        return $productById;
+    }
+
+
+    /* OBTIENE CATEGORIAS POR PRODUCTO */
+    function getCategorieAndProduct($selected){ // ARREGLAR ESTO <3 !!!!!
+        $query = $this->db->prepare("SELECT producto. *, categoria.tipo FROM producto a INNER JOIN categoria ON producto.id_categoria = categoria.id_categoria WHERE producto.id_producto = ?;");
+        $query->execute(array($selected)); // no anda !!!!!!!!!
+        $CategoriaAndProducto = $query->fetchAll(PDO::FETCH_OBJ);
+
+        return $CategoriaAndProducto;
+    }
+
+    /* INSERTA UN PRODUCTO */
     public function insertarProducto($id_categoria, $tipo, $talle, $precio) {
         $query = $this->db->prepare('INSERT INTO producto (id_categoria_fk, tipo, talle, precio) VALUES (?, ?, ?, ?)');
         $query->execute([$id_categoria, $tipo, $talle, $precio]);
@@ -43,23 +64,4 @@ function getCategorieAndProduct($selected){ // ARREGLAR ESTO <3 !!!!!
         return $this->db->lastInsertId();
     }
 
-    /* FUNCION PARA BORRAR POR ID */ 
-    function deleteProductoById($id_producto) {
-        $query = $this->db->prepare("DELETE FROM producto WHERE id_producto = ?");
-        $query->execute([$id_producto]);
-    }
-    
-// FUNCION PARA ACTUALIZAR LOS PRODUCTOS DE LA TABLA
-        public function updateProduct($id_producto, $TIPO, $TALLE, $PRECIO) {
-            $query = $this->db->prepare('UPDATE producto SET tipo=?, talle=?, precio=? WHERE id_producto=?');
-            $query->execute([$TIPO, $TALLE, $PRECIO, $id_producto]);
-    }          
-
-    public function getproductDetails($ID_producto){
-        $query = $this->db->prepare("SELECT * FROM producto WHERE id_producto = ?");
-        $query->execute([$ID_producto]);
-        $productById = $query->fetchAll(PDO::FETCH_OBJ);    
-        
-        return $productById;
-    }
 }

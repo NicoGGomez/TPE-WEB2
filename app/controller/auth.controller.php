@@ -10,6 +10,7 @@ class authController {
 
     public function __construct() {
         $this->view = new authView();
+        $this->model = new authModel();
     }
 
     public function showLogin(){
@@ -23,21 +24,21 @@ class authController {
 
     public function auth(){
 
+        $user = $_POST['usuario'];
+        $password = $_POST['contraseña'];
+
         if (empty($user) || empty($password)) {
             $this->view->showLogin('Faltan completar datos');
             return;
         }
 
-        $user = $_POST['usuario'];
-        $password = $_POST['contraseña'];
-
         // busco el usuario
-        $usuario = $this->model->getByUser($user);
+        $usuarioBD = $this->model->getByUser($user);
         
-        if ($usuario && password_verify($password, $usuario->password)) {
+        if ($usuarioBD && password_verify($password, $usuarioBD->contraseña)) {
             // ACA LO AUTENTIQUE
             
-            authHelper::login($usuario); 
+            authHelper::login($usuarioBD); 
             
             header('Location: ' . BASE_URL);
         } else {

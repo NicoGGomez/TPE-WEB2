@@ -16,11 +16,10 @@ class categoriaView {
         include 'templates/detalle.categoria.phtml';
     }
 
-    // function showResultFilter($ProductAndCategorie){
-    //     $this->smarty->assign('ProductAndCategorie', $ProductAndCategorie);
-    //     $this->smarty->display('filter.tpl');
-
-    // }
+    function showResultFilter($ProductoAndCategoria){
+        $prodYCat = $ProductoAndCategoria;
+        require_once 'templates/filter.phtml';
+    }
 
 }
 

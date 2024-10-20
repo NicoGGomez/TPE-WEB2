@@ -14,7 +14,15 @@ class categoriaController {
         $this->view = new categoriaView();
         $this->helper = new authHelper();
     }
-/* OBTIENE LAS CATEGORIAS DEL MODEL (getCategories) Y LAS ASIGNA A LA FUNCION DE LA VIEW (showCategories)*/
+
+    function filter(){
+        if(isset ($_POST['selected'])&&(!empty($_POST['selected']))){
+            $selected = $_POST['selected'];
+            $ProductAndCategorie = $this->model->getProductoAndCategoria($selected);
+            $this->view->showResultFilter($ProductAndCategorie);
+        }
+    }
+
     public function showCategoria(){
         session_start();
         $categories = $this->model->getCategorias();
@@ -25,26 +33,21 @@ class categoriaController {
         $categoriaDetails = $this->model->getcategoriaDetails($ID_categoria);
         $this->view->showDetailsCategorias($categoriaDetails);
     }
-
-    // function showCategoria(){
-    //     $this->view->show();
-    // }
     
-    function addCategorie() {
+    function addCategoria() {
         // validar entrada de datos
         authHelper::verify();
-        $ID_categoria = $_POST['ID_categoria'];
-        $TIPO_DE_PRENDA = $_POST['TIPO_DE_PRENDA'];
-        $DETALLE = $_POST['DETALLE'];
+        $ID_categoria = $_POST['id_categoria'];
+        $TIPO_DE_PRENDA = $_POST['tipo_prenda'];
+        $DETALLE = $_POST['detalle'];
 
-        $this->model->insertCategorie($ID_categoria, $TIPO_DE_PRENDA, $DETALLE);
-        header("Location: " . BASE_URL. "categories"); 
+        $this->model->insertCategoria($ID_categoria, $TIPO_DE_PRENDA, $DETALLE);
+        header("Location: " . BASE_URL. "categoria"); 
     }
 
-// Funcion borrar categoria
-    function deleteCategorie($ID_categoria) {
+    function deleteCategoria($ID_categoria) {
         authHelper::verify();
-        $this->model->deleteCategorieById($ID_categoria);
-        header("Location: " . BASE_URL. "categories"); 
+        $this->model->deleteCategoriaById($ID_categoria);
+        header("Location: " . BASE_URL. "categoria"); 
     }
 }

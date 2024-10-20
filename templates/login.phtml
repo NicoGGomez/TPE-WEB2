@@ -5,9 +5,9 @@
         <div class="upper-form">
             <h2>Login Form</h2>
             <label for="username">Username</label><br>
-            <input type="text" name="email"><br>
+            <input type="text" name="usuario"><br>
             <label for="password">Password</label><br>
-            <input type="password" name="password"><br>
+            <input type="password" name="contraseña"><br>
             <div class="btn-login">
                 <button type="submit" class="btn-form-login">Login</button>
             </div>
@@ -15,10 +15,10 @@
         <div class="button-form"></div>
     </form>
 
-    <?php if ($error):?>
+</div>
+
+<?php if ($error): ?>
             <div>
                 <?= $error ?>
             </div>
-    <?php endif ?>
-
-</div>
+<?php endif ?>

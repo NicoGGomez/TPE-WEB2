@@ -46,7 +46,7 @@ switch ($params[0]) {
         break;
 
     case 'validate':
-        $authController  = new authController();
+        $authController = new authController();
         $authController -> auth();
         break;
 
@@ -76,52 +76,47 @@ switch ($params[0]) {
         $productoController -> deleteProducto($id_prod);
         break;
 
-    case 'formActualizarProdcut':
-        $$productoController = new productoController();
+    case 'formActualizarProdcuto':
+        $productoController = new productoController();
         $id_prod = $params[1];
         $productoController -> FormEditProducto($id_prod);
         break;
 
     case 'updateProduct':
-        $productsController = new productoController();
+        $productoController = new productoController();
         $ID_producto = $params[1];
-        $productsController -> updateProduct($ID_producto);
+        $productoController -> updateProducto($ID_producto);
         break;
 
     case 'detalle':
-        $productsController = new productoController();
+        $productoController = new productoController();
         $ID_producto = $params[1];
-        $productsController -> showProductDetails($ID_producto);
+        $productoController -> showProductoDetails($ID_producto);
         break;
 
     case 'detalleCategoria':
-        $categoriesController = new categoriaController();
+        $categoriaController = new categoriaController();
         $ID_categoria = $params[1];
-        $categoriesController -> showCategoriaDetails($ID_categoria);
+        $categoriaController -> showCategoriaDetails($ID_categoria);
         break;
 
     case 'filter':
-        $categoriesController = new categoriaController();
-        $categoriesController -> filter();
+        $categoriaController = new categoriaController();
+        $categoriaController -> filter();
         break;
 
-    case 'addCategorie':
-        $categoriesController = new categoriaController();
-        $categoriesController -> addCategoria();
+    case 'addCategoria':
+        $categoriaController = new categoriaController();
+        $categoriaController -> addCategoria();
         break;
 
     case 'deleteCategorie':
-        $categoriesController = new categoriaController();
+        $categoriaController = new categoriaController();
         $ID_categoria = $params[1];
-        $categoriesController -> deleteCategoria($ID_categoria);
+        $categoriaController -> deleteCategoria($ID_categoria);
         break;
 
     default:
         echo 'No encontrado papa';
         break;
 }
-
-
-// <link rel="stylesheet" href="<?= BASE_URL ? > apps/Css/formulario.css"> 
-
-

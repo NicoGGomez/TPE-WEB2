@@ -1,0 +1,41 @@
+/* footer */
+
+.footer {
+    bottom: 0;
+    width: 100%;
+    align-self: flex-end;
+    display: flex;
+    background-color: black;
+    position: relative;
+}
+
+.footer .container {
+    width: 100%;
+    margin: 20px;
+}
+
+.footer .container .zona-info{
+    display: grid;
+    grid-template-columns: 33% auto 33%;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.zona-info .con {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer .container .zona-copy p {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.footer .container a, h4, p {
+    color: #fff;
+    text-decoration: none;
+}

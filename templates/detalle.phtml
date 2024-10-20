@@ -10,13 +10,13 @@
       </tr>
     </thead>
     <tbody>
-    <?php foreach ($productById as $product) { ?>
+    <?php foreach ($prods as $producto) { ?>
       <tr>
-      <td><?= $product->id_categoria_fk ?></td>
-      <td><?php $product->id_producto?></td>
-      <td><?php $product->tipo ?></td>
-      <td><?php $product->talle ?></td>
-      <td><span>$</span><?php $product->precio ?></td>
+      <td><?= $producto->id_categoria ?></td>
+      <td><?= $producto->id_producto?></td>
+      <td><?= $producto->tipo ?></td>
+      <td><?= $producto->talle ?></td>
+      <td><span>$</span><?= $producto->precio ?></td>
       </tr>
       <?php } ?>
     </tbody>

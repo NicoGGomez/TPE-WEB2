@@ -1,10 +1,10 @@
-{include file = "header.tpl"}
+<?php include 'templates/header.phtml' ?>
 <h1>Campeones por Facciones</h1>
 <ul>
-{foreach from=$ProductAndCategorie item=$product}
-    <li>{$product->TIPO}</li>
+<?php foreach($prodYCat as $product) : ?>
+    <li><?= $product->TIPO ?></li>
     
-{/foreach}
+<?php endforeach; ?>
 </ul>
 <a href="categories" type="button" class="btn btn-link">Volver a la tabla</a>
-{include file = "footer.tpl"}
+<?php include 'templates/footer.phtml'; ?>

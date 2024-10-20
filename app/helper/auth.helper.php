@@ -10,7 +10,7 @@ class authHelper {
 
     public static function login($user) {
         authHelper::init();
-        $_SESSION['usuario'] = $user->id_usuario;
+        $_SESSION['user'] = $user->id_user;
     }
 
     public static function logout() {
@@ -21,7 +21,7 @@ class authHelper {
 
     public static function verify() {
         authHelper::init();
-        if (!isset($_SESSION['usuario'])) {
+        if (!isset($_SESSION['user'])) {
             header('Location: ' . BASE_URL . 'login');
             die();
         }
