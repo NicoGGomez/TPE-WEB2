@@ -2,7 +2,12 @@
 
 class productoView {
 
-    function show(){
+    function showProducto($prods){
+        $productos = $prods;
+        require 'templates/producto.phtml';
+    }
+
+    function showFormEdit(){
         require 'templates/producto.phtml';
     }
 

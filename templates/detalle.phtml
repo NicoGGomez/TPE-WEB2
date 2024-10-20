@@ -12,11 +12,11 @@
     <tbody>
     <?php foreach ($productById as $product) { ?>
       <tr>
-      <td><?= $product->ID_categoria_fk ?></td>
-      <td>{$product->ID_producto}</td>
-      <td>{$product->TIPO}</td>
-      <td>{$product->TALLE}</td>
-      <td><span>$</span>{$product->PRECIO}</td>
+      <td><?= $product->id_categoria_fk ?></td>
+      <td><?php $product->id_producto?></td>
+      <td><?php $product->tipo ?></td>
+      <td><?php $product->talle ?></td>
+      <td><span>$</span><?php $product->precio ?></td>
       </tr>
       <?php } ?>
     </tbody>

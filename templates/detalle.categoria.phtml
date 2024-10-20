@@ -8,12 +8,12 @@
       </tr>
     </thead>
     <tbody>
-    <?php foreach($categorias as $categoria ){ ?>
+    <?php foreach($categorias as $categoria ): ?>
       <tr>
-      <td><?= $categorie->ID_categoria?></td>
-      <td><?= $categorie->TIPO_DE_PRENDA?></td>
-      <td><?= $categorie->DETALLE?></td>
+      <td><?= $categoria->id_categoria?></td>
+      <td><?= $categoria->tipo_prenda?></td>
+      <td><?= $categoria->detalle?></td>
       </tr>
-      <?php } ?>
+      <?php endforeach; ?>
     </tbody>
   </table>

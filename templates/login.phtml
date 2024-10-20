@@ -14,4 +14,11 @@
         </div>
         <div class="button-form"></div>
     </form>
+
+    <?php if ($error):?>
+            <div>
+                <?= $error ?>
+            </div>
+    <?php endif ?>
+
 </div>

@@ -10,20 +10,20 @@ class categoriaController {
     private $helper;
 
     public function __construct(){
-        // $this->model = new categoriesModel();
+        $this->model = new categoriesModel();
         $this->view = new categoriaView();
         // $this->helper = new authHelper();
     }
 /* OBTIENE LAS CATEGORIAS DEL MODEL (getCategories) Y LAS ASIGNA A LA FUNCION DE LA VIEW (showCategories)*/
     public function showCategoria(){
         session_start();
-        $categories = $this->model->getCategories();
+        $categories = $this->model->getCategorias();
         $this->view->showCategorias($categories);
     }
 
-    public function showCategorieDetails($ID_categoria){
-        $categorieDetails = $this->model->getcategorieDetails($ID_categoria);
-        $this->view->showDetailsCategorias($categorieDetails);
+    public function showCategoriaDetails($ID_categoria){
+        $categoriaDetails = $this->model->getcategoriaDetails($ID_categoria);
+        $this->view->showDetailsCategorias($categoriaDetails);
     }
 
     // function showCategoria(){

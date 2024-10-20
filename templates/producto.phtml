@@ -1,5 +1,4 @@
 <?php require('header.phtml') ?>
-
 <table class="tableProduct">
     <thead>
       <tr>
@@ -14,20 +13,22 @@
       </tr>
     </thead>
     <tbody>
-    {foreach from=$products item=$product}
+    <?php foreach ($productos as $producto) : ?>
       <tr>
-        <td><?php $product->ID_categoria_fk?></td>
-        <td><?php $product->ID_producto?></td>
-        <td><?php $product->TIPO?></td>
-        <td><?php $product->TALLE?></td>
-      <td><span>$</span>{$product->PRECIO}</td>
-      <td><a href='detalle/{$product->ID_producto}' type='button'>Detalles</a></td>
-      {if verify}
-      <td><a href='delete/{$product->ID_producto}' type='button'>Borrar</a></td> 
-      <td><a href='edit/{$product->ID_producto}' type='button'>Editar</a></td> 
-      {/if}
+        <td><?php $producto->id_categoria?></td>
+        <td><?php $producto->id_producto?></td>
+        <td><?php $producto->tipo?></td>
+        <td><?php $producto->talle?></td>
+      <td><span>$</span><?php $producto->precio?> </td>
+      <td><a href='detalle/{$product->id_producto}' type='button'>Detalles</a></td>
+      
+      <?php //if(verify()){ ?>
+      <td><a href='delete/{$product->id_producto}' type='button'>Borrar</a></td> 
+      <td><a href='edit/{$product->id_producto}' type='button'>Editar</a></td> 
+      <?php //} ?>
+      
       </tr>
-      {/foreach}
+      <?php endforeach; ?>
     </tbody>
 </table>
 

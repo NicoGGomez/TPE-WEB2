@@ -17,22 +17,22 @@ if (!empty($_GET['action'])) {
 // Parsea la acción ej: dev/juan --> ['dev', juan]
 $params = explode('/', $action);
 
-// login                    ->  authController->showLogin();
-// logout                   ->  authController->showLogout(); 
-// validate                 ->  authController->auth();
-// home                     ->  homeController->showHome();
-// categories               ->  categoriaController->showCategoria();
-// products                 ->  productoController->showProductos(); 
-// add                      ->  productoController->addProductos();   
-// delete                   ->  productoController->deleteProducto($id_prod); 
-// formActualizarProduct    ->  productoController->FormEditProducto();  
-// updateProduct            ->  productoController->updateProducto(); 
-// detalle                  ->  productoController->showProductoDetails(); 
-// detalleCategorie         ->  categoriaController->showCategoriaDetails(); 
-// filter                   ->  categoriaController->filter(); 
-// addCategorie             ->  categoriaController->addCategoria();
-// deleteCategorie          ->  categoriaController->deleteCategoria();
-// editCategorie            ->  categoriaController->editCategoria();
+// login                    ->  authController          ->  showLogin();
+// logout                   ->  authController          ->  showLogout(); 
+// validate                 ->  authController          ->  auth();
+// home                     ->  homeController          ->  showHome();
+// categories               ->  categoriaController     ->  showCategoria();
+// products                 ->  productoController      ->  showProductos(); 
+// add                      ->  productoController      ->  addProductos();   
+// delete                   ->  productoController      ->  deleteProducto($id_prod); 
+// formActualizarProduct    ->  productoController      ->  FormEditProducto();  
+// updateProduct            ->  productoController      ->  updateProducto(); 
+// detalle                  ->  productoController      ->  showProductoDetails(); 
+// detalleCategorie         ->  categoriaController     ->  showCategoriaDetails(); 
+// filter                   ->  categoriaController     ->  filter(); 
+// addCategorie             ->  categoriaController     ->  addCategoria();
+// deleteCategorie          ->  categoriaController     ->  deleteCategoria();
+// editCategorie            ->  categoriaController     ->  editCategoria();
 
 switch ($params[0]) {
     case 'login':
@@ -94,7 +94,7 @@ switch ($params[0]) {
         $productsController -> showProductDetails($ID_producto);
         break;
 
-    case 'detalleCategorie':
+    case 'detalleCategoria':
         $categoriesController = new categoriaController();
         $ID_categoria = $params[1];
         $categoriesController -> showCategoriaDetails($ID_categoria);
@@ -117,7 +117,11 @@ switch ($params[0]) {
         break;
 
     default:
-        echo '404 page not found';
+        echo 'No encontrado papa';
         break;
 }
+
+
+// <link rel="stylesheet" href="<?= BASE_URL ? > apps/Css/formulario.css"> 
+
 

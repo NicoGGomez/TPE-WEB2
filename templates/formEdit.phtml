@@ -1,15 +1,15 @@
-<?php require_once 'templates/header.tpl'; ?>
+<?php require_once 'templates/header.phtml' ?>
 
-<form action="updateProduct/<?= $products->ID_producto; ?>" method="post" required>
+<form action="updateProduct/<?= $products->id_producto; ?>" method="post" required>
     <label for="tipo">TIPO:</label>
-    <input type="text" class="form-control" id="TIPO" name="TIPO" value="<?= $products->TIPO; ?>" required>
+    <input type="text" class="form-control" id="TIPO" name="TIPO" value="<?= $products->tipo; ?>" required>
 
     <label class="form-label" for="talle">TALLE:</label>
-    <input type="text" class="form-control" id="TALLE" name="TALLE" value="<?= $products->TALLE; ?>" required>
+    <input type="text" class="form-control" id="TALLE" name="TALLE" value="<?= $products->talle; ?>" required>
 
 
     <label for="precio">PRECIO:</label>
-    <input type="number" class="form-control" id="PRECIO" name="PRECIO" value="<?= $products->PRECIO; ?>" required>
+    <input type="number" class="form-control" id="PRECIO" name="PRECIO" value="<?= $products->precio; ?>" required>
 
     <button class="btn btn-success" type="submit">Actualizar producto</button>
 </form>

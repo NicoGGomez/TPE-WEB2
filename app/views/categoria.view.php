@@ -1,20 +1,19 @@
 <?php 
 
 class categoriaView {
-    private $tpl;
 
     function show(){
         require 'templates/categoria.phtml';
     }
 
-    function showCategorias($categories){
-        
+    function showCategorias($todasLasCategorias){
+        $categorias = $todasLasCategorias;
+        include 'templates/detalle.categoria.phtml';
     }
 
     function showDetailsCategorias($categorieById){
-        require 'detalle.categoria.phtml';
-        // $this->smarty->assign('categorieById', $categorieById);
-        // $this->smarty->display('details.categorie.tpl');
+        $categorias = $categorieById;
+        include 'templates/detalle.categoria.phtml';
     }
 
     // function showResultFilter($ProductAndCategorie){

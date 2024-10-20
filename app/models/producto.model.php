@@ -1,19 +1,19 @@
 <?php
 
-class productsModel {
+class productoModel {
     private $db;
 
     public function __construct(){
         $this->db = new PDO('mysql:host=localhost;'.'dbname=db_tiendaderopa;charset=utf8','root','');
     }
 
-/* OBTIENE TODOS LOS REGISTROS DE LA TABLA PRODUCTOS */
-    function getProducts(){
+    /* OBTIENE TODOS LOS REGISTROS DE LA TABLA PRODUCTOS */
+    function getProductos(){
         $query = $this->db->prepare('SELECT * FROM producto');
         $query->execute();
 
-        $products = $query->fetchAll(PDO::FETCH_OBJ);
-        return $products;
+        $productos = $query->fetchAll(PDO::FETCH_OBJ);
+        return $productos;
     }
 
 /* OBTIENE CATEGORIAS POR PRODUCTO */
@@ -25,8 +25,8 @@ function getCategorieAndProduct($selected){ // ARREGLAR ESTO <3 !!!!!
     return $CategorieAndProduct;
 }
 
-/* OBTIENE PRODUCTOS POR ID */
-    function getProductById($ID_producto){
+    /* OBTIENE PRODUCTOS POR ID */
+    function getProductoById($ID_producto){
         $query = $this->db->prepare('SELECT * FROM producto WHERE id_producto=?');
         $query->execute([$ID_producto]);
         $productById = $query->fetch(PDO::FETCH_OBJ);
@@ -36,15 +36,15 @@ function getCategorieAndProduct($selected){ // ARREGLAR ESTO <3 !!!!!
 
 
 /* INSERTA UN PRODUCTO */
-    public function insertProduct($id_categoria, $TIPO, $TALLE, $PRECIO) {
+    public function insertarProducto($id_categoria, $tipo, $talle, $precio) {
         $query = $this->db->prepare('INSERT INTO producto (id_categoria_fk, tipo, talle, precio) VALUES (?, ?, ?, ?)');
-        $query->execute([$id_categoria, $TIPO, $TALLE, $PRECIO]);
+        $query->execute([$id_categoria, $tipo, $talle, $precio]);
 
         return $this->db->lastInsertId();
     }
 
-/* FUNCION PARA BORRAR POR ID */ 
-    function deleteProductById($id_producto) {
+    /* FUNCION PARA BORRAR POR ID */ 
+    function deleteProductoById($id_producto) {
         $query = $this->db->prepare("DELETE FROM producto WHERE id_producto = ?");
         $query->execute([$id_producto]);
     }

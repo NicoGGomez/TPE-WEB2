@@ -4,7 +4,7 @@ class categoriesModel {
     private $db;
 
     public function __construct(){
-        $this->db = new PDO('mysql:host=localhost;'.'dbname=db_tiendaropa;charset=utf8','root','');
+        $this->db = new PDO('mysql:host=localhost;'.'dbname=db_tiendaderopa;charset=utf8','root','');
     }
 
 /* OBTIENE TODOS LOS REGISTROS DE LA TABLA CATEGORIAS */
@@ -16,7 +16,7 @@ class categoriesModel {
         return $categories;
     }
 
-    public function getCategoriaDetails($ID_categoria){
+    public function getcategoriaDetails($ID_categoria){
         $query = $this->db->prepare("SELECT * FROM categoria WHERE id_categoria = ?");
         $query->execute([$ID_categoria]);
         $categorieById = $query->fetchAll(PDO::FETCH_OBJ);    
