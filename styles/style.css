@@ -8,14 +8,125 @@
     box-sizing: border-box;
 }
 
+body {
+    font-family: 'Nunito', sans-serif;
+    background-image: linear-gradient(45deg, #9a0500 40%, #002570 100%);
+    height: 200vh;
+    background-size: cover;
+    background-position: center;
+}
+
+/* CATEGORIA */
+
+.container-categoria {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-categoria .table {
+    margin-top: 60px;
+    background-color: #fff;
+    width: 70%;
+    height: 40vh;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.container-categoria .table thead{
+    align-items: center;
+}
+
+.container-categoria .table td p, a {
+    color: black;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+}
+
+.container-categoria .table td a:hover {
+    color: rgb(30, 0, 255);
+}
+
+/* FORM ADD CATEGORIA */
+
+.container-add-categoria {
+    display: flex;
+    justify-content: center;
+}
+
+.container-add-categoria .formulario {
+    margin-top: 60px;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    width: 70%;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.container-add-categoria .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.container-add-categoria input {
+    padding: 2px;
+    margin-right: 5px;
+    margin-left: 5px;
+    height: 35px;
+    border-radius: 10px;
+}
+
+.container-add-categoria button {
+    padding: 2px;
+    margin-right: 5px;
+    height: 35px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    color: #fff;
+    background-color: black;
+}
+
+.container-add-categoria label {
+    font-weight: bold;
+    margin-left: 5px;
+}
+
 /* login */
 
-.formulario {
+.container-login .formulario {
     width: 100%;
     height: 80vh;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.container-login .formulario form {
+    background-color: #fff;
+    border-radius: 10px;
+    width: 20%;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-login .formulario button,input{
+    height: 30px;
+    border-radius: 10px;
+}
+
+.container-login .formulario .btn-login{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
 }
 
 

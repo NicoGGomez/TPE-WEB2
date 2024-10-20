@@ -1,4 +1,6 @@
 <?php include('header.phtml'); ?>
+
+<div class="container-categoria">
 <table class="table">
     <thead>
       <tr>
@@ -13,17 +15,17 @@
     <tbody>
     <?php foreach($categorias as $categoria ){ ?>
       <tr>
-      <td><?= $categoria->id_categoria ?></td>
-      <td><?= $categoria->tipo_prenda ?></td>
-      <td><?= $categoria->detalle ?></td>
+      <td><p><?= $categoria->id_categoria ?></p></td>
+      <td><p><?= $categoria->tipo_prenda ?></p></td>
+      <td><p><?= $categoria->detalle ?></p></td>
       <td><a href='detalleCategoria/<?= $categoria->id_categoria ?>' type='button'>Detalles</a></td>
       <td><a href='deleteCategoria/<?= $categoria->id_categoria ?>' type='button'>Borrar</a></td> 
       <td><a href='editCategoria/<?= $categoria->id_categoria ?>' type='button'>Editar</a></td> 
-
       <?php } ?>
       </tr>
 
     </tbody>
   </table>
+</div>
 
     <?php include('templates/formAddCategoria.phtml'); ?>
