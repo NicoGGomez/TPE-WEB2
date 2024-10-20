@@ -23,7 +23,7 @@ class productoController {
         // validar entrada de datos
         authHelper::verify();
         if((isset($_POST['id_categoria']) && ($_POST['tipo']) && (isset($_POST['talle']) && (isset($_POST['precio']))))) {
-        $id_categoria= $_POST['id_categoria'];
+        $id_categoria = $_POST['id_categoria'];
         $tipo = $_POST['tipo'];
         $talle = $_POST['talle'];
         $precio = $_POST['precio'];

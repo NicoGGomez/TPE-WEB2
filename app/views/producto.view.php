@@ -9,12 +9,12 @@ class productoView {
 
     function showFormEdit($prods){
         $productos = $prods;
-        require 'templates/producto.phtml';
+        require 'templates/formEdit.phtml';
     }
 
     function showError($error){
         $errores = $error;
-        require_once "templates/errores.tpl";
+        require_once "templates/errores.phtml";
     }
 
     function showDetails($prods){

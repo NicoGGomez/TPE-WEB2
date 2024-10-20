@@ -24,8 +24,8 @@ class authController {
 
     public function auth(){
 
-        $user = $_POST['usuario'];
-        $password = $_POST['contraseña'];
+        $user = $_POST['usr'];
+        $password = $_POST['con'];
 
         if (empty($user) || empty($password)) {
             $this->view->showLogin('Faltan completar datos');
@@ -35,12 +35,11 @@ class authController {
         // busco el usuario
         $usuarioBD = $this->model->getByUser($user);
         
-        if ($usuarioBD && password_verify($password, $usuarioBD->contraseña)) {
+        if ($usuarioBD && $password === $usuarioBD->contraseña) {
             // ACA LO AUTENTIQUE
-            
-            authHelper::login($usuarioBD); 
-            
+            authHelper::login($usuarioBD);
             header('Location: ' . BASE_URL);
+            $this->view->showLogout();
         } else {
             $this->view->showLogin('Usuario inválido');
         }

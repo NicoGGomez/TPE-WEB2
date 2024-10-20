@@ -2,11 +2,10 @@
     <form class="formulario" action="add" method="POST">
     <div>
         <label class="form-label">NUMERO CATEGORIA</label>
-        <select name="ID_categoria_fk" class="form-control"> 
+        <select name="id_categoria" class="form-control"> 
     <!--acomodar esto para que no sea hardcodeado-->
-            <option value="1">1 - Remeras</option>
-            <option value="2">2 - Short</option>
-            <option value="11">11 - Medias</option>
+            <option value="5">1 - independiente</option>
+            <option value="6">2 - boca</option>
         </select>
 
 <!-- HABRIA QUE HACERLO ASI PERO NO ANDA!!!
@@ -19,15 +18,15 @@
     </div>
     <div>
         <label class="form-label">TIPO</label>
-        <input type="text" name="TIPO" placeholder="Ingrese un tipo de prenda" class="form-control" required>
+        <input type="text" name="tipo" placeholder="Ingrese un tipo de prenda" class="form-control" required>
     </div>
     <div>
         <label class="form-label">TALLE</label>
-        <input type="text" name="TALLE" class="form-control" required>
+        <input type="text" name="talle" class="form-control" required>
     </div>
     <div>
         <label class="form-label">PRECIO</label>
-        <input type="text" name="PRECIO" class="form-control" required>
+        <input type="text" name="precio" class="form-control" required>
     </div>
         <button type="submit" class="btn-form-login">Agregar Producto</button>
     </form>

@@ -110,7 +110,7 @@ switch ($params[0]) {
         $categoriaController -> addCategoria();
         break;
 
-    case 'deleteCategorie':
+    case 'deleteCategoria':
         $categoriaController = new categoriaController();
         $ID_categoria = $params[1];
         $categoriaController -> deleteCategoria($ID_categoria);

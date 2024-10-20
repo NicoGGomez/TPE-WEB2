@@ -19,10 +19,10 @@
         <td><?= $prod -> id_producto ?></td>
         <td><?= $prod -> tipo ?></td>
         <td><?= $prod -> talle ?></td>
-        <td><span>$</span><?= $prod ->precio ?> </td>
-        <td><a href='detalle/{$prod -> id_producto}' type='button'>Detalles</a></td>
-        <td><a href='delete/{$prod -> id_producto}' type='button'>Borrar</a></td> 
-        <td><a href='edit/{$prod -> id_producto}' type='button'>Editar</a></td> 
+        <td><span>$</span><?= $prod -> precio ?> </td>
+        <td><a href='detalle/<?= $prod->id_producto ?>' type='button'>Detalles</a></td>
+        <td><a href='delete/<?= $prod->id_producto ?>' type='button'>Borrar</a></td> 
+        <td><a href='formActualizarProdcuto/<?= $prod->id_producto ?>' type='button'>Editar</a></td> 
       </tr>
     <?php endforeach; ?>
     </tbody>

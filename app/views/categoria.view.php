@@ -8,7 +8,7 @@ class categoriaView {
 
     function showCategorias($todasLasCategorias){
         $categorias = $todasLasCategorias;
-        include 'templates/detalle.categoria.phtml';
+        include 'templates/categoria.phtml';
     }
 
     function showDetailsCategorias($categorieById){

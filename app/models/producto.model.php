@@ -58,7 +58,7 @@ class productoModel {
 
     /* INSERTA UN PRODUCTO */
     public function insertarProducto($id_categoria, $tipo, $talle, $precio) {
-        $query = $this->db->prepare('INSERT INTO producto (id_categoria_fk, tipo, talle, precio) VALUES (?, ?, ?, ?)');
+        $query = $this->db->prepare('INSERT INTO producto (id_categoria, tipo, talle, precio) VALUES (?, ?, ?, ?)');
         $query->execute([$id_categoria, $tipo, $talle, $precio]);
 
         return $this->db->lastInsertId();
