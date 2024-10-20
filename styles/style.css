@@ -121,12 +121,20 @@ body {
 .container-login .formulario button,input{
     height: 30px;
     border-radius: 10px;
+    box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.8);
 }
 
 .container-login .formulario .btn-login{
     display: flex;
     justify-content: center;
     margin-top: 10px;
+}
+
+.container-login .formulario .btn-login button {
+    width: 75px;
+    box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.8);
+    font-weight: bold;
+    padding: 5px;
 }
 
 
