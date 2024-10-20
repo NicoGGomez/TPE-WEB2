@@ -1,5 +1,5 @@
-<?php require('header.phtml') ?>
-<table class="tableProduct">
+<?php include('templates/header.phtml'); ?>
+<table class="tableProduct"> 
     <thead>
       <tr>
       <th class='col'>#</th>
@@ -15,17 +15,15 @@
     <tbody>
     <?php foreach ($productos as $producto) : ?>
       <tr>
-        <td><?php $producto->id_categoria?></td>
-        <td><?php $producto->id_producto?></td>
-        <td><?php $producto->tipo?></td>
-        <td><?php $producto->talle?></td>
+        <td><?php $producto->id_categoria ?></td>
+        <td><?php $producto->id_producto ?></td>
+        <td><?php $producto->tipo ?></td>
+        <td><?php $producto->talle ?></td>
       <td><span>$</span><?php $producto->precio?> </td>
       <td><a href='detalle/{$product->id_producto}' type='button'>Detalles</a></td>
       
-      <?php //if(verify()){ ?>
       <td><a href='delete/{$product->id_producto}' type='button'>Borrar</a></td> 
       <td><a href='edit/{$product->id_producto}' type='button'>Editar</a></td> 
-      <?php //} ?>
       
       </tr>
       <?php endforeach; ?>

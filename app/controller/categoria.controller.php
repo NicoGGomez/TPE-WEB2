@@ -2,7 +2,7 @@
 
 require_once 'app/models/categoria.model.php';
 require_once 'app/views/categoria.view.php';
-// require_once 'app/helpers/auth.helper.php';
+require_once 'app/helper/auth.helper.php';
 
 class categoriaController {
     private $model;
@@ -12,7 +12,7 @@ class categoriaController {
     public function __construct(){
         $this->model = new categoriesModel();
         $this->view = new categoriaView();
-        // $this->helper = new authHelper();
+        $this->helper = new authHelper();
     }
 /* OBTIENE LAS CATEGORIAS DEL MODEL (getCategories) Y LAS ASIGNA A LA FUNCION DE LA VIEW (showCategories)*/
     public function showCategoria(){

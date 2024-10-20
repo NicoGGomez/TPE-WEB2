@@ -11,7 +11,6 @@ class authHelper {
     public static function login($user) {
         authHelper::init();
         $_SESSION['usuario'] = $user->id_usuario;
-        $_SESSION['contraseña'] = $user->contraseña; 
     }
 
     public static function logout() {
