@@ -32,7 +32,7 @@ body {
 }
 
 .container-home .hero-content {
-    background-color: black;
+    background-color: #fff;
     border-radius: 10px;
     padding: 20px;
 }
@@ -43,10 +43,14 @@ body {
     font-family: fantasy;
     margin-left: 20px;
     font-size: 30px;
-    color: #fff;
+    color: #000;
     letter-spacing: 2px;
-    text-shadow: 3px 3px 7px rgba(0, 0, 0, 0.8);
     margin-bottom: 20px;
+}
+
+.container-home .hero p{
+    color: #000;
+    font-weight: bold;
 }
 
 .container-home .container {
@@ -60,6 +64,69 @@ body {
     border-radius: 10px;
     box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.8);
     padding: 5px;
+    transition: .5s;
+}
+
+.container-home .container button:hover {
+    background-color: #000;
+    color: #fff;
+    transition: .5s;
+    cursor: pointer;
+}
+
+.container-home .container-productos{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.container-home .productos {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    height: 60vh;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+.container-home .productos .titulo {
+    display: flex;
+    justify-content: center;
+}
+
+.container-home .productos h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    background-image: linear-gradient(45deg, #9a0500 40%, #002570 100%);
+    color: #fff;
+    border-radius: 10px;
+    width: 30%;
+}
+
+.container-home .prods{
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.container-home .prods .producto img{
+    width: 500px;
+    height: 300px;
+    box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.8);
+    margin: 10px;
+    object-fit: cover;
+    transition: 1s;
+    cursor: pointer;
+}
+
+.container-home .prods .producto img:hover{
+    width: 505px;
+    height: 305px;
+    object-fit: cover;
+    transition: 1s;
 }
 
 /* CATEGORIA */
@@ -110,7 +177,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 60px;
-    width: 70%;
+    width: 80%;
     border-radius: 10px;
 }
 
@@ -131,15 +198,26 @@ body {
     margin-bottom: 0;
 }
 
-.container-add-categoria button {
+.container-add-categoria .btn-form-login {
     padding: 2px;
     height: 35px;
     border-radius: 10px;
     cursor: pointer;
     font-weight: bold;
+    color: #000;
+    background-color: #fff;
+    margin-bottom: 0;
+    transition: 0.5;
+    box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.8);
+    transition: .5s;
+}
+
+.container-add-categoria .btn-form-login:hover {
     color: #fff;
     background-color: black;
-    margin-bottom: 0;
+    transition: 0.5;
+    cursor: pointer;
+    transition: .5s;
 }
 
 .container-add-categoria label {
@@ -176,6 +254,17 @@ body {
     display: flex;
     justify-content: center;
 }
+
+/* TITULO CATEGORIA Y PRODUCTO */
+
+.container-titulo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    color: #fff;
+}
+
 
 /* PRODUCTO */
 
@@ -225,7 +314,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 60px;
-    width: 70%;
+    width: 80%;
     border-radius: 10px;
 }
 
@@ -247,21 +336,94 @@ body {
     box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.8);
 }
 
-.container-add-producto button {
+.container-add-producto .btn-form-login {
     padding: 2px;
     height: 35px;
     border-radius: 10px;
     cursor: pointer;
     font-weight: bold;
-    color: #fff;
-    background-color: black;
+    color: #000;
+    background-color: #fff;
     margin-bottom: 0;
     box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.8);
+    transition: .5s;
+}
+
+.container-add-producto .btn-form-login:hover {
+    color: #fff;
+    background-color: black;
+    transition: .5s;
 }
 
 .container-add-producto label {
     font-weight: bold;
     margin-left: 5px;
+}
+
+/* EDITAR PRODUCTO */
+
+.container-edit-producto {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container-edit-producto .form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.container-edit-producto .form input,label{
+    margin: 10px;
+}
+
+.container-edit-producto .form button{
+    /* width: 75px; */
+    border-radius: 10px;
+    box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.8);
+    font-weight: bold;
+    padding: 5px;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.container-edit-producto .form button:hover{
+    color: #fff;
+    background-color: #000;
+    transition: .5s;
+    cursor: pointer;
+}
+
+/* DETALLE PRODUCTO */
+
+.container-producto-detalles {
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-producto-detalles .table {
+    margin-top: 60px;
+    background-color: #fff;
+    width: 70%;
+    height: 30vh;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.container-producto-detalles .table thead{
+    align-items: center;
+}
+
+.container-producto-detalles .table td p, a {
+    color: black;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
 }
 
 /* LOGIN */
@@ -318,11 +480,19 @@ body {
     margin-top: 10px;
 }
 
-.container-login .formulario .btn-login button {
+.container-login .formulario .btn-login .btn-form-login {
     width: 75px;
     box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.8);
     font-weight: bold;
     padding: 5px;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.container-login .formulario .btn-login .btn-form-login:hover {
+    color: #fff;
+    background-color: #000;
+    transition: .5s;
     cursor: pointer;
 }
 

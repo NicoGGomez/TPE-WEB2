@@ -1,6 +1,7 @@
 <?php require_once 'templates/header.phtml' ?>
 
-<form action="updateProduct/<?= $prods->id_producto; ?>" method="post" required>
+<div class="container-edit-producto">
+<form class="form" action="updateProduct/<?= $prods->id_producto; ?>" method="post" required>
     <label for="tipo">TIPO:</label>
     <input type="text" class="form-control" id="tipo" name="tipo" value="<?= $prods->tipo; ?>" required>
 
@@ -13,4 +14,4 @@
 
     <button class="btn btn-success" type="submit">Actualizar producto</button>
 </form>
-<?php require_once 'templates/footer.phtml'; ?>
+</div>

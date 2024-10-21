@@ -1,4 +1,6 @@
 <?php include('templates/header.phtml'); ?>
+
+<div class="container-titulo"><h2>Productos</h2></div>
 <div class="container-producto">
 <table class="table"> 
     <thead>
@@ -20,7 +22,7 @@
         <td><p><?= $prod -> id_producto ?></p></td>
         <td><p><?= $prod -> tipo ?></p></td>
         <td><p><?= $prod -> talle ?></p></td>
-        <td><span>$</span><p><?= $prod -> precio ?></p></td>
+        <td><p><span>$ </span><?= $prod -> precio ?></p></td>
         <td><a href='detalle/<?= $prod->id_producto ?>' type='button'>Detalles</a></td>
         <td><a href='delete/<?= $prod->id_producto ?>' type='button'>Borrar</a></td> 
         <td><a href='formActualizarProdcuto/<?= $prod->id_producto ?>' type='button'>Editar</a></td> 

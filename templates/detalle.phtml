@@ -1,4 +1,5 @@
 <?php include 'header.phtml'; ?>
+<div class="container-producto-detalles">
 <table class="table">
     <thead>
       <tr>
@@ -12,12 +13,13 @@
     <tbody>
     <?php foreach ($prods as $producto) { ?>
       <tr>
-      <td><?= $producto->id_categoria ?></td>
-      <td><?= $producto->id_producto?></td>
-      <td><?= $producto->tipo ?></td>
-      <td><?= $producto->talle ?></td>
-      <td><span>$</span><?= $producto->precio ?></td>
+      <td><p><?= $producto->id_categoria ?></p></td>
+      <td><p><?= $producto->id_producto?></p></td>
+      <td><p><?= $producto->tipo ?></p></td>
+      <td><p><?= $producto->talle ?></p></td>
+      <td><p><span>$</span><?= $producto->precio ?></p></td>
       </tr>
       <?php } ?>
     </tbody>
   </table>
+</div>
