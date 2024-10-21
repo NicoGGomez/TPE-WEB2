@@ -11,8 +11,8 @@ class authModel {
     public function getByUser($user) {
         $query = $this->db->prepare('SELECT * FROM usuario WHERE user = ?');
         $query->execute([$user]);
-        $user = $query->fetch(PDO::FETCH_OBJ);
-        return $user;  
+
+        return $query->fetch(PDO::FETCH_OBJ);
     }
 
 }

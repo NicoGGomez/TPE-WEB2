@@ -29,7 +29,6 @@ $params = explode('/', $action);
 // updateProduct            ->  productoController      ->  updateProducto(); 
 // detalle                  ->  productoController      ->  showProductoDetails(); 
 // detalleCategorie         ->  categoriaController     ->  showCategoriaDetails(); 
-// filter                   ->  categoriaController     ->  filter(); 
 // addCategorie             ->  categoriaController     ->  addCategoria();
 // deleteCategorie          ->  categoriaController     ->  deleteCategoria();
 // editCategorie            ->  categoriaController     ->  editCategoria();
@@ -98,11 +97,6 @@ switch ($params[0]) {
         $categoriaController = new categoriaController();
         $ID_categoria = $params[1];
         $categoriaController -> showCategoriaDetails($ID_categoria);
-        break;
-
-    case 'filter':
-        $categoriaController = new categoriaController();
-        $categoriaController -> filter();
         break;
 
     case 'addCategoria':
