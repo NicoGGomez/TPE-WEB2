@@ -20,10 +20,10 @@
       <td><p><?= $categoria->tipo_prenda ?></p></td>
       <td><p><?= $categoria->detalle ?></p></td>
       <td><a href='detalleCategoria/<?= $categoria->id_categoria ?>' type='button'>Detalles</a></td>
-      <?php if(authHelper::verify()){ ?>
+      <?php // if(authHelper::verify()){ ?>
       <td><a href='deleteCategoria/<?= $categoria->id_categoria ?>' type='button'>Borrar</a></td> 
       <td><a href='editCategoria/<?= $categoria->id_categoria ?>' type='button'>Editar</a></td> 
-      <?php } ?>
+      <?php // } ?>
       <?php } ?>
       </tr>
 

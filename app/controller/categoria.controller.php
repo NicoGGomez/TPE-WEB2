@@ -15,14 +15,6 @@ class categoriaController {
         $this->helper = new authHelper();
     }
 
-    function filter(){
-        if(isset ($_POST['selected'])&&(!empty($_POST['selected']))){
-            $selected = $_POST['selected'];
-            $ProductAndCategorie = $this->model->getProductoAndCategoria($selected);
-            $this->view->showResultFilter($ProductAndCategorie);
-        }
-    }
-
     public function showCategoria(){
         session_start();
         $categories = $this->model->getCategorias();
